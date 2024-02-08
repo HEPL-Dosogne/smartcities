@@ -13,4 +13,4 @@ Les répertoires sont les suivants :
 - **sensors** : température et humidité, luminosité, PIR.
 - **network** : Accès réseau avec le RPi Pico.
 
-(GPIO)[GPIO]
+[GPIO](GPIO)
