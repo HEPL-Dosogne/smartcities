@@ -6,11 +6,9 @@ Dans le cadre du cours de MicroPython et du projet Smartcorridor chaque étudian
 
 # Répertoires
 Les répertoires sont les suivants :
-- **GPIO** : LED simple, bouton-poussoir, interruption.
-- **AD-PWM** : lecture du potentiomètre, PWM (LED, musique, servo).
-- **LCD** : documentation des fonctions de la librairie, affichage de la valeur du potentiomètre.
-- **LED_neo** : utilisation des LEDs néopixel, documentation des fonctions de la librairie, arc-en-ciel.
-- **sensors** : température et humidité, luminosité, PIR.
-- **network** : Accès réseau avec le RPi Pico.
-
-[GPIO](GPIO)
+- [GPIO](GPIO) : LED simple, bouton-poussoir, interruption.
+- [AD-PWM](AD-PWM) : lecture du potentiomètre, PWM (LED, musique, servo).
+- [LCD](LCD) : documentation des fonctions de la librairie, affichage de la valeur du potentiomètre.
+- [LED_neo](LED_neo) : utilisation des LEDs néopixel, documentation des fonctions de la librairie, arc-en-ciel.
+- [sensors](sensors) : température et humidité, luminosité, PIR.
+- [network](network) : Accès réseau avec le RPi Pico.
