@@ -12,3 +12,10 @@ Les répertoires sont les suivants :
 - **LED_neo** : utilisation des LEDs néopixel, documentation des fonctions de la librairie, arc-en-ciel.
 - **sensors** : température et humidité, luminosité, PIR.
 - **network** : Accès réseau avec le RPi Pico.
+
+- [GPIO](GPIO)
+- [AD-PWM](AD-PWM)
+- [LCD](LCD)
+- [LED_neo](LED_neo)
+- [sensors](sensors)
+- [network](network)
