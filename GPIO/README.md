@@ -4,4 +4,4 @@ Dans ce premier exercice nous allons changer l'état de d'une led grâce à un b
 Le code est trouvable [ici](LED_3_States)
 
 résultat final :
-!
+![gif]https://github.com/HEPL-Dosogne/smartcities/blob/main/GPIO/MicrosoftTeams-video.gif
