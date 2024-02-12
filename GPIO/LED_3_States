@@ -1,7 +1,6 @@
 
 # LED 3 états
-
-## Dosogne Guillaume 02/24
+# Dosogne Guillaume 02/24
 
 import machine
 import utime
@@ -44,5 +43,3 @@ while True:
         blinkFast()
     elif val == 3:
         LedOff()
-
-
