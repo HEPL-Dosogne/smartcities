@@ -3,7 +3,7 @@ Dans ce premier exercice nous allons changer l'état de d'une led grâce à un b
 
 Le code est trouvable [ici](LED_3_States)
 
-Dans ce code, on trouve 
+Dans ce code, on trouve d'abord la déclaration de nos variables soit le boutton et la led. On a ensuite 4 fonctions dont 3 décriront le comportement de la led (clignotement, clignotement rapide et éteinte) et la dernière permet de passer d'un état à un autre. Enfin, on a la routine d'interruption qui dépend du boutton et la boucle final qui commandera l'état de la led en fonction du mode dans lequel on se trouve.
 
 résultat final :
 
