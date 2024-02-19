@@ -9,6 +9,3 @@ résultat final :
 
 ![gif](https://github.com/HEPL-Dosogne/smartcities/blob/main/GPIO/MicrosoftTeams-video.gif)
 
-
-# Exercice 2 : Volume d'un buzzer
-Ce deuxième exercice se base sur l'utilisation d'un potentiomètre afin de régler le volume d'une mélodie que l'on jouera grâce à un buzzer.
