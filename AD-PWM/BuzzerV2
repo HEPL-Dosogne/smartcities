@@ -1,1 +1,47 @@
+#BuzzerV2
+#Dosogne Guillaume 19/02
 
+from machine import Pin, PWM, ADC
+from time import sleep
+
+Button = Pin(16, Pin.IN)
+buzzer = PWM(Pin(27))  # Pin A1
+led = Pin(18, Pin.OUT)
+Vol_Sensor = ADC(0)
+Volume = 0
+val = 1
+
+freq = [1046, 1175, 1318, 1397, 1568, 1760, 1967]
+notes = ['DO', 'RE', 'MI', 'FA', 'SOL', 'LA', 'SI']
+time_Melo1 = [0.125, 0.25, 0.25, 0.125, 0.25, 0.25, 0.125]
+time_Melo2 = [0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5]
+
+def Update_Vol():
+    global Volume
+    Volume = Vol_Sensor.read_u16()
+
+def Play(note, time):
+    Update_Vol()
+    element = notes.index(note)
+    buzzer.freq(freq[element])
+    buzzer.duty_u16(Volume)
+    led.value(1)
+    sleep(time)
+    led.value(0)
+    sleep(time)
+
+def Next(pin):
+    global val
+    val = val + 1
+    if val > 2:
+        val = 1
+
+Button.irq(trigger=Pin.IRQ_FALLING, handler=Next)
+
+while True:
+    if val == 1:
+        for i in range(len(notes)):
+            Play(notes[i], time_Melo1[i])
+    elif val == 2:
+        for i in range(len(notes)):
+            Play(notes[i], time_Melo2[i])
