@@ -15,5 +15,7 @@ On a aussi rajouter dans cette version, une led clignotant au même rythme que l
 
 ## Hardware
 
+![image](https://github.com/HEPL-Dosogne/smartcities/blob/main/AD-PWM/Buzzer.png)
+
 
 Une amélioration intéressante serait de permettre au boutton de changer de mélodie immédiatemment lorsqu'on appuie dessus. Dans les 2 cas présentés ci-dessus, le changement se fait lorsque la mélodie actuelle est terminée.
