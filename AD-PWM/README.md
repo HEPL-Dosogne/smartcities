@@ -13,4 +13,7 @@ le code est [ici](BuzzerV2)
 Dans cette deuxième version, on utilise des listes pour définir nos notes et nos mélodies. Plus besoin d'une fonction pour chaque note utilisée. On garde cependant la fonction pour le volume et la routine d'interruption liée au boutton. A celles-ci vient se rajouter la fonction "Play(note,time)" qui va nous permettre de jouer chaque notes, une par une, en parcourant les listes prédéfinies.
 On a aussi rajouter dans cette version, une led clignotant au même rythme que la mélodie jouée (inclu dans la fonction Play)
 
+## Hardware
+
+
 Une amélioration intéressante serait de permettre au boutton de changer de mélodie immédiatemment lorsqu'on appuie dessus. Dans les 2 cas présentés ci-dessus, le changement se fait lorsque la mélodie actuelle est terminée.
