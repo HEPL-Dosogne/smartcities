@@ -8,6 +8,8 @@ Le deuxième état se déclanche lorsque la température mesurée dépassse la t
 Le dernier état se produit lorsque la température ambiente dépasse la température de consigne de + de 3°C.
 Lorsque ça arrive, un buzzer émettra une certaine fréquence pour prévenir l'utilisateur, la led clignotera plus vite et le mot "ALARM" apparaitra à l'écran (Nous verrons deux possibilités différentes : faire clignoter le mot alarm ou le faire défiler sur notre écran)
 
+Pour réaliser un tel exercice, nous utiliserons les commandes présentes dans la librairie du lcd qui est trouvable [ici] (
+
 Le code est trouvable [ici]
 
 
