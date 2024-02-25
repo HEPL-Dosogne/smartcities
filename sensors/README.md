@@ -8,12 +8,12 @@ Le deuxième état se déclanche lorsque la température mesurée dépassse la t
 Le dernier état se produit lorsque la température ambiente dépasse la température de consigne de + de 3°C.
 Lorsque ça arrive, un buzzer émettra une certaine fréquence pour prévenir l'utilisateur, la led clignotera plus vite et le mot "ALARM" apparaitra à l'écran (Nous verrons deux possibilités différentes : faire clignoter le mot alarm ou le faire défiler sur notre écran)
 
-Pour réaliser un tel exercice, nous utiliserons les commandes présentes dans la librairie du lcd qui est trouvable [ici] (
+Pour réaliser un tel exercice, nous utiliserons les commandes présentes dans la librairie du lcd qui est trouvable [ici] (https://github.com/HEPL-Dosogne/smartcities/blob/main/LCD/LCD1602) 
 
 Le code est trouvable [ici]
 
 
 résultat final :
 
-![gif](https://github.com/HEPL-Dosogne/smartcities/blob/main/GPIO/MicrosoftTeams-video.gif)
+![gif]
 
