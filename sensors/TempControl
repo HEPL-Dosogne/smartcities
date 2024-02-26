@@ -1,1 +1,107 @@
+# Dosogne Guillaume
+# 26/02/24
+
+from lcd1602 import LCD1602
+from dht11 import *
+from machine import I2C,Pin,ADC,PWM
+from time import sleep
+
+#écran lcd
+i2c = I2C(1,scl=Pin(7), sda=Pin(6), freq=400000)
+d = LCD1602(i2c, 2, 16)
+d.display()
+
+dht = DHT(18) 							#capteur T°
+buzzer = PWM(Pin(16))					#buzzer
+LED = machine.Pin(20,machine.Pin.OUT) 	#led
+LED.value(0) 							#led éteinte pr défaut
+ROTARY_ANGLE_SENSOR = ADC(0) 			#potentiomètre
+
+# Plage du potentiomètre
+pot_min = 304
+pot_max = 65535
+
+# Plage de température
+temp_min = 15
+temp_max = 35
+
+position = 15 #pour le defilment du mot alarm
+
+def read_temp(): #lecture de la temperature
+    global temp
+    temp,humid = dht.readTempHumid()
+    #temp = 24
+    
+def set_temp():
+    global temp_set
+    def map_value(value, in_min, in_max, out_min, out_max):
+        return (value - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+    pot_value =  ROTARY_ANGLE_SENSOR.read_u16()
+    temp_set = map_value(pot_value, pot_min, pot_max, temp_min, temp_max)
+    
+def Display():  #affichage sur l'ecran
+    global temp
+    global temp_set
+    d.clear()
+    d.setCursor(0,0)
+    d.print("Set:"+str(temp_set))
+    d.setCursor(0,1)
+    d.print("Ambient:"+str(temp))
+    time.sleep(0.5)
+    
+def LED_Blink(): #0,5Hz = 2s
+    LED.value(1) 
+    time.sleep(1)
+    LED.value(0)  
+    time.sleep(1)
+    
+def blink_Fast():
+    LED.value(1)
+    time.sleep(0.2)
+    LED.value(0)
+    time.sleep(0.2)
+    
+def Alarm_blink():   #faire clignoter le mot alarm
+    for i in range(1):
+        read_temp()
+        set_temp()
+        d.clear()
+        d.setCursor(5,0)
+        d.print("ALARM!")
+        d.setCursor(3,1)
+        d.print("Temp:"+str(temp))
+        time.sleep(0.5)
+        d.clear()
+
+def Alarm_defil():   #faire défiler le mot alarm
+    global position
+    for i in range (1):
+        read_temp()
+        d.clear()
+        d.setCursor(position,0)
+        d.print("ALARM")
+        time.sleep(0.5)
+        position -= 1
+        if position < 0 :
+            position = 16
+
+while True:
+    read_temp()
+    set_temp()
+    Display()
+    print(dht.readTempHumid()) #T° dans le shell
+    print(ROTARY_ANGLE_SENSOR.read_u16())
+    print("Température : {}°C".format(temp_set))
+    if temp > temp_set :
+        LED_Blink()
+        buzzer.duty_u16(0)
+    while temp > temp_set + 3 :
+        buzzer.freq(200)
+        buzzer.duty_u16(200)
+        blink_Fast()
+        Alarm_blink()      #choisir entre clignotement
+        #Alarm_defil()     #ou defilement
+        print(dht.readTempHumid()) #T° dans le shell
+
+
 
