@@ -22,7 +22,9 @@ Voyons en détail la composition du code.
 
 Viens ensuite notre boucle infinie dans laquelle on gère les 3 états possibles.
 
-résultat final :
+résultat avec le mot alarm qui clignote :
+
+résultat avec le mot alarm qui défile :
 
 
 
