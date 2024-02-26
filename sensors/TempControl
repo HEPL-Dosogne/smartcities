@@ -32,7 +32,7 @@ def read_temp(): #lecture de la temperature
     temp,humid = dht.readTempHumid()
     #temp = 24
     
-def set_temp():
+def set_temp(): #mapping temperature Set
     global temp_set
     def map_value(value, in_min, in_max, out_min, out_max):
         return (value - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
@@ -49,13 +49,13 @@ def Display():  #affichage sur l'ecran
     d.print("Ambient:"+str(temp))
     time.sleep(0.5)
     
-def LED_Blink(): #0,5Hz = 2s
+def LED_Blink(): #clignoter la led (0,5Hz = 2s)
     LED.value(1) 
     time.sleep(1)
     LED.value(0)  
     time.sleep(1)
     
-def blink_Fast():
+def blink_Fast(): #clignoter la led + vite
     LED.value(1)
     time.sleep(0.2)
     LED.value(0)
@@ -77,6 +77,7 @@ def Alarm_defil():   #faire défiler le mot alarm
     global position
     for i in range (1):
         read_temp()
+        set_temp()
         d.clear()
         d.setCursor(position,0)
         d.print("ALARM")
@@ -90,8 +91,8 @@ while True:
     set_temp()
     Display()
     print(dht.readTempHumid()) #T° dans le shell
-    print(ROTARY_ANGLE_SENSOR.read_u16())
-    print("Température : {}°C".format(temp_set))
+    print(ROTARY_ANGLE_SENSOR.read_u16()) #valeur du potentiomètre
+    print("Température : {}°C".format(temp_set)) #température "mapper" % au potentiomètre
     if temp > temp_set :
         LED_Blink()
         buzzer.duty_u16(0)
@@ -99,9 +100,6 @@ while True:
         buzzer.freq(200)
         buzzer.duty_u16(200)
         blink_Fast()
-        Alarm_blink()      #choisir entre clignotement
-        #Alarm_defil()     #ou defilement
+        #Alarm_blink()      #choisir entre clignotement
+        Alarm_defil()     #ou defilement
         print(dht.readTempHumid()) #T° dans le shell
-
-
-
