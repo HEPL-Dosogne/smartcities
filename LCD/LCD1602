@@ -1,6 +1,6 @@
 from machine import I2C, Pin
 import time
-class LCD1602(object):
+class LCD1602(object): 
     #commands
     LCD_CLEARDISPLAY = 0x01
     LCD_RETURNHOME = 0x02
