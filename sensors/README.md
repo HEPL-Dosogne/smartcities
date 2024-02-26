@@ -20,7 +20,9 @@ Voyons en détail la composition du code.
 - La fonction Alarm_blink() permet de faire clignoter le mot "ALARM!" sur l'écran lcd
 - La fonction Alarm_defil() tant qu'à elle faire défiler le mot "ALARM!" sur l'écran
 
+Viens ensuite notre boucle infinie dans laquelle on gère les 3 états possibles.
+
 résultat final :
 
-![gif]
+
 
