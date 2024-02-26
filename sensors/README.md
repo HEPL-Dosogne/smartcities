@@ -22,10 +22,13 @@ Voyons en détail la composition du code.
 
 Viens ensuite notre boucle infinie dans laquelle on gère les 3 états possibles.
 
-résultat avec le mot alarm qui clignote :
+Résultat avec le mot alarm qui clignote :
+
 ![gif](https://github.com/HEPL-Dosogne/smartcities/blob/main/sensors/Temp_sensor_blink.gif)
 
-résultat avec le mot alarm qui défile :
+Résultat avec le mot alarm qui défile :
+
+![gif](https://github.com/HEPL-Dosogne/smartcities/blob/main/sensors/Temp_sensor_defil.gif)
 
 
 
