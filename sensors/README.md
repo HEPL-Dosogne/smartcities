@@ -1,4 +1,4 @@
-# Exercice 3 : Contrôle de la température
+# Exercice 3 : Contrôle de la température 
 Dans ce troisième exercice, nous allons créer un programme qui permet de gérer un thermostat à plusieurs états. Nous allons afficher sur notre écran LCD la température mesurée par notre capteur de température ainsi qu'une température de consigne que nous pourrons faire varier grâce à un potentiomètre. 
 
 Lorsque la température de la pièce ne dépasse pas la température de consigne, on affiche simplement les 2 températures. 
