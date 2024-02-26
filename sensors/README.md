@@ -10,9 +10,10 @@ Lorsque ça arrive, un buzzer émettra une certaine fréquence pour prévenir l'
 
 Pour réaliser un tel exercice, nous utiliserons les commandes présentes dans la librairie du lcd qui est trouvable [ici](https://github.com/HEPL-Dosogne/smartcities/blob/main/LCD/LCD1602)
 
-Le code est trouvable [ici]
+Le code est trouvable [ici](https://github.com/HEPL-Dosogne/smartcities/blob/main/sensors/TempControl)
 
-
+Voyons en détail la composition du code.
+La fonction read_temp()
 résultat final :
 
 ![gif]
