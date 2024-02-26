@@ -13,7 +13,13 @@ Pour réaliser un tel exercice, nous utiliserons les commandes présentes dans l
 Le code est trouvable [ici](https://github.com/HEPL-Dosogne/smartcities/blob/main/sensors/TempControl)
 
 Voyons en détail la composition du code.
-La fonction read_temp()
+- La fonction read_temp() utilise le capteur de température pour avoir la température de la pièce
+- La fonction set_temp() défini la température de consigne grâce au potentiomètre. On lit sa valeur puis on la convertit en une valeur comprise entre 15 °C et 35 °C.
+- La fonction Display() affiche les 2 température sur l'écran lcd.
+- Les fonctions LED_blink() et blink_Fast() servent toute les deux à faire clignoter la led mais à différente fréquence
+- La fonction Alarm_blink() permet de faire clignoter le mot "ALARM!" sur l'écran lcd
+- La fonction Alarm_defil() tant qu'à elle faire défiler le mot "ALARM!" sur l'écran
+
 résultat final :
 
 ![gif]
